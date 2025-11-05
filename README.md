@@ -51,10 +51,6 @@ The system follows an Encoder–Decoder architecture:
 4. Evaluation: Measure BLEU score to compare predicted and ground-truth captions.  
 5. Inference: Generate captions for unseen images using the trained model.
 
----
-
----
-
 
 ## 💻 Installation & Setup
 
