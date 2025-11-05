@@ -1,5 +1,3 @@
-Got it 👍 — here’s a **plain text, copy-paste ready `README.md`** with all the `**` (bold markdown) removed and clean formatting that looks perfect on GitHub.
-
 ---
 
 ````markdown
@@ -103,42 +101,10 @@ python predict.py --image test_images/example.jpg
 Output Example:
 
 ```
-Input Image: 🖼️ example.jpg
+Input Image: ![Sample Output](images/text_output.png)
 Generated Caption: "A man riding a bike on a street."
 ```
-
 ---
-
-## 🌐 Optional Web App
-
-You can build a simple GUI using Streamlit or Flask to upload images and display generated captions.
-
-Run Streamlit App:
-
-```bash
-streamlit run app.py
-```
-
-Example Interface:
-
-```
-+---------------------------------------+
-| [ Upload Image ]                      |
-|                                       |
-|  🖼️ [ Image of a dog playing ball ]   |
-|                                       |
-| Caption: "A brown dog playing with a ball in the park." |
-+---------------------------------------+
-```
-
----
-
-## 📊 Evaluation Metric
-
-Model performance is evaluated using BLEU (Bilingual Evaluation Understudy) score — comparing generated captions with human-written captions for accuracy and fluency.
-
----
-
 ## 📂 Project Structure
 
 ```
@@ -158,13 +124,6 @@ Image-Caption-Generator/
 ```
 
 ---
-
-## 🧾 Resume Line
-
-Developed an Image Caption Generator by combining CNN for image feature extraction and LSTM for sentence generation, achieving automated text descriptions from image data.
-
----
-
 ## 🧠 Expected Outcome
 
 * Generates accurate and meaningful captions for unseen images
@@ -187,13 +146,6 @@ Developed an Image Caption Generator by combining CNN for image feature extracti
 
 Your Name
 B.Tech ECE | SRM Institute of Science and Technology
-[your.email@example.com](mailto:your.email@example.com)
-LinkedIn: [https://linkedin.com/in/yourusername](https://linkedin.com/in/yourusername)
-GitHub: [https://github.com/yourusername](https://github.com/yourusername)
-
-```
+[sg6165@srmist.edu.in]
 
 ---
-
-Would you like me to include a ready **requirements.txt** next (with all TensorFlow, Keras, OpenCV, Pillow, etc.) so you can upload it with this README?
-```
