@@ -1,142 +1,261 @@
+Nice — I’ll make a polished, full-featured README for your **Image Caption Generator (CNN + LSTM)** styled like the BettaFish example you pasted: big centered header, badges, clear sections (Overview, Architecture, Quick Start, Example Output with image), code blocks, disclaimers, license, contact, contributors, and project stats placeholders. Copy-paste ready.
 
-````markdown
-# 🧠 Image Caption Generator using CNN + LSTM
-
-Automatically generate descriptive captions for images using Deep Learning, combining the power of Computer Vision (CNN) and Natural Language Processing (LSTM).  
-Built with TensorFlow / Keras, trained on the MS COCO dataset, and capable of generating human-like image descriptions.
+Below is the complete `README.md` (Markdown). Replace any `yourusername`, image paths, URLs, and placeholder values with your real ones.
 
 ---
 
-## 🎯 Project Overview
+<div align="center">
 
-The Image Caption Generator is an AI model that takes an image as input and outputs a text caption that describes the image content.  
-It replicates how platforms like Google Photos or Pinterest automatically describe uploaded images.
+<img src="static/image/logo_compressed.png" alt="Image Caption Generator Logo" width="100%">
 
----
+[![GitHub Stars](https://img.shields.io/github/stars/yourusername/Image-Caption-Generator?style=flat-square)](https://github.com/yourusername/Image-Caption-Generator/stargazers)
+[![GitHub Forks](https://img.shields.io/github/forks/yourusername/Image-Caption-Generator?style=flat-square)](https://github.com/yourusername/Image-Caption-Generator/network)
+[![GitHub Issues](https://img.shields.io/github/issues/yourusername/Image-Caption-Generator?style=flat-square)](https://github.com/yourusername/Image-Caption-Generator/issues)
+[![GitHub License](https://img.shields.io/github/license/yourusername/Image-Caption-Generator?style=flat-square)](https://github.com/yourusername/Image-Caption-Generator/blob/main/LICENSE)
+[![PyPI Version](https://img.shields.io/pypi/v/your-package-name?style=flat-square)](https://pypi.org/project/your-package-name)
 
-## ⚙️ Tech Stack
+[English](./README-EN.md) | [中文文档](./README-CH.md)
 
-- Frameworks: TensorFlow, Keras  
-- Languages: Python  
-- Models Used: CNN (InceptionV3 / VGG16 / ResNet50), LSTM  
-- Dataset: MS COCO  
-- Libraries: NumPy, Pandas, Matplotlib, Pillow, OpenCV, NLTK  
-- Evaluation Metric: BLEU Score  
+</div>
 
----
+# 🧠 Image Caption Generator (CNN + LSTM)
 
-## 🧩 Architecture
-
-The system follows an Encoder–Decoder architecture:
-
-1. CNN Encoder:  
-   - Extracts visual features from images using a pretrained CNN model.  
-   - Converts the image into a numerical feature vector.
-
-2. LSTM Decoder:  
-   - Takes the encoded image features and generates descriptive captions word by word.  
-   - Learns contextual relationships between visual and textual data.
-
-3. Combined Model:  
-   - The CNN and LSTM are merged to form an end-to-end trainable network.  
-   - Uses categorical cross-entropy loss for optimization.
+Automatically generate descriptive captions for images using deep learning — combining a CNN encoder (InceptionV3 / VGG16 / ResNet50) with an LSTM decoder. Built with TensorFlow / Keras and trained on MS COCO, this project demonstrates an end-to-end encoder–decoder approach to image captioning.
 
 ---
 
-## 🧠 Workflow
+## ⚡ Project Overview
 
-1. Image Feature Extraction: Use a pretrained CNN (InceptionV3 / VGG16 / ResNet50) to extract image features.  
-2. Caption Preprocessing: Tokenize and clean captions using NLTK & Keras Tokenizer.  
-3. Training: Combine image features with text sequences and train the CNN + LSTM model.  
-4. Evaluation: Measure BLEU score to compare predicted and ground-truth captions.  
-5. Inference: Generate captions for unseen images using the trained model.
+This repo implements an encoder–decoder architecture that converts images into human-like captions. It’s suitable for demos, course projects, research baselines, and as a starting point for production systems (with further optimization).
 
+Key features:
 
-## 💻 Installation & Setup
-
-1. Clone the Repository
-
-bash
-git clone https://github.com/yourusername/Image-Caption-Generator.git
-cd Image-Caption-Generator
-````
-
-2. Install Dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
-3. Download Dataset
-
-Download the MS COCO dataset ([https://cocodataset.org/#home](https://cocodataset.org/#home)) and place it inside the /data folder.
+* Pretrained CNN for robust image feature extraction
+* LSTM decoder with sequence modeling and teacher forcing training
+* Tokenization, caption cleaning, and vocabulary management
+* BLEU score evaluation and sample inference pipeline
+* Optional attention mechanism extension (commented / experimental)
 
 ---
 
-## 🧠 Training the Model
+## 🧩 Why this project is useful
 
-```bash
-python extract_features.py     # Extract image features using CNN
-python preprocess_captions.py  # Clean and tokenize captions
-python train.py                # Train the CNN + LSTM model
-```
+* Great learning resource for CV + NLP fusion
+* Lightweight baseline for rapid experimentation
+* Useful demo for portfolios, talks, and university projects
 
 ---
 
-## 📷 Generate Captions
+## 🧠 Architecture
 
-```bash
-python predict.py --image test_images/example.jpg
-```
+<div align="center">
+<img src="static/image/system_schematic.png" alt="Architecture Schematic" width="800">
+</div>
 
-Output Example:
+1. **CNN Encoder**
 
-```
-Input Image: ![Sample Output](images/text_output.png)
-Generated Caption: "A man riding a bike on a street."
-```
+   * Pretrained model (InceptionV3 / ResNet50 / VGG16)
+   * Remove final classification layers and extract a dense visual feature vector (or spatial feature map for attention)
+
+2. **Text Preprocessor**
+
+   * Clean captions, lowercase, remove punctuation
+   * Tokenize with Keras Tokenizer
+   * Generate sequences and padding; build word-index mappings
+
+3. **LSTM Decoder**
+
+   * Sequence input (previous words) + image features
+   * Embedding layer → LSTM → Dense (softmax) over vocabulary
+   * Trained with categorical cross-entropy and teacher forcing
+
+4. **(Optional) Attention**
+
+   * Use spatial features + attention layer to attend to image regions during decoding
+
 ---
-## 📂 Project Structure
+
+## 📁 Project Structure
 
 ```
 Image-Caption-Generator/
-│
-├── data/                    # Dataset (images + captions)
-├── features/                # Extracted CNN features
-├── models/                  # Saved model weights
-├── notebooks/               # Jupyter notebooks
-├── app.py                   # Streamlit/Flask app
-├── train.py                 # Model training script
-├── predict.py               # Caption generation
-├── extract_features.py       # CNN feature extraction
-├── preprocess_captions.py    # Text preprocessing
+├── data/                      # COCO subsets, preprocessed captions, tokenizers
+├── models/                    # Trained weights / checkpoints
+├── notebooks/                 # EDA and training notebooks
+├── src/
+│   ├── encoder.py             # CNN feature extractor
+│   ├── decoder.py             # LSTM / attention decoder
+│   ├── train.py               # Training loop
+│   ├── inference.py           # Caption generation script
+│   ├── utils.py               # helpers: tokenizers, loaders, metrics
+│   └── evaluate.py            # BLEU / evaluation utilities
+├── static/                    # logos, example images
+│   └── image/
+├── example_output.jpg         # example generated image (placeholder)
 ├── requirements.txt
-└── README.md
+├── README.md
+└── LICENSE
 ```
 
 ---
-## 🧠 Expected Outcome
 
-* Generates accurate and meaningful captions for unseen images
-* Demonstrates integration of Computer Vision and NLP
-* Provides strong foundation in deep learning encoder–decoder models
-* Optional GUI for real-time captioning
+## 🚀 Quick Start
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/yourusername/Image-Caption-Generator.git
+cd Image-Caption-Generator
+```
+
+### 2. Create environment & install
+
+#### Using conda
+
+```bash
+conda create -n imgcap python=3.11 -y
+conda activate imgcap
+pip install -r requirements.txt
+```
+
+#### Using venv
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate   # Windows: .venv\Scripts\activate
+pip install -r requirements.txt
+```
+
+### 3. Prepare data (MS COCO)
+
+* Download COCO images and annotations (or use a small subset for quick tests).
+* Run preprocessing to build caption tokens and features:
+
+```bash
+python src/utils.py --prepare-coco --annotations /path/to/annotations --images /path/to/images
+```
+
+### 4. Train (small run)
+
+```bash
+python src/train.py --config configs/train_small.yaml
+```
+
+### 5. Evaluate
+
+```bash
+python src/evaluate.py --model models/last_checkpoint.h5 --data data/val_annotations.json
+```
+
+### 6. Inference / Generate a caption
+
+```bash
+python src/inference.py --image static/example.jpg --model models/last_checkpoint.h5
+```
 
 ---
 
-## 📚 References
+## 📸 Example Output
 
-* MS COCO Dataset: [https://cocodataset.org/#home](https://cocodataset.org/#home)
-* Show and Tell: A Neural Image Caption Generator (Google Research): [https://arxiv.org/abs/1411.4555](https://arxiv.org/abs/1411.4555)
-* TensorFlow Documentation: [https://www.tensorflow.org/](https://www.tensorflow.org/)
-* Keras API Reference: [https://keras.io/api/](https://keras.io/api/)
+Below is an example of model output. Replace `example_output.jpg` with your real output.
+
+<div align="center">
+<img src="example_output.jpg" alt="Example Output" width="700">
+</div>
+
+**Generated Caption (example):**
+
+> “A group of people standing next to a red and white boat on a beach.”
+
+---
+
+## 📊 Results & Evaluation
+
+* **Dataset:** MS COCO (subset / full)
+* **Evaluation Metric:** BLEU-1..4, METEOR (optional)
+* **Typical baseline BLEU-4:** 0.25–0.45 (varies with training, beam size, attention)
+
+> Note: These numbers are illustrative — report your real scores after training.
 
 ---
 
-## 👤 Author
+## 🛠️ Experiments & Tips
 
-SREE DHARSHAN G J
-B.Tech ECE | SRM Institute of Science and Technology
-[sg6165@srmist.edu.in]
+* Use **feature caching** (store CNN features) for faster training iterations.
+* Start with a **small vocabulary** (top N words) then expand.
+* Experiment with **beam search** (beam width 3–5) during inference for better captions.
+* Add **attention** (Bahdanau / Luong) for improved localization-to-word mapping.
+* Fine-tune the backbone CNN (careful: needs more GPU/RAM).
 
 ---
+
+## 🔮 Future Work
+
+* Integrate Transformer-based decoders (e.g., Vision Transformer + Transformer decoder).
+* Add multilingual captioning and BLEU/CIDEr evaluation.
+* Deploy as an API with FastAPI / Flask and a simple web demo.
+* Quantize / prune models for mobile inference.
+
+---
+
+## ⚠️ Disclaimer
+
+This project is for educational and research purposes only. Respect dataset terms (MS COCO) and licenses. Do not use this system for disallowed or infringing activities.
+
+---
+
+## 📄 License
+
+This project is released under the **MIT License** (or change to your preferred license). See the `LICENSE` file for details.
+
+---
+
+## 👨‍💻 Author & Contact
+
+**Sreedharshan G J**
+Electronics & Communication Engineering — SRM Institute of Science and Technology
+📧 [your.email@example.com](mailto:your.email@example.com)
+GitHub: [yourusername](https://github.com/yourusername)
+
+---
+
+## 🤝 Contributing
+
+We welcome contributions! Please:
+
+1. Fork the repo
+2. Create a feature branch (`git checkout -b feature/Awesome`)
+3. Commit changes (`git commit -m 'Add feature'`)
+4. Push and open a PR
+
+Be sure to follow PEP8, add tests for new features, and update docs.
+
+---
+
+## 👥 Contributors
+
+[![Contributors](https://contrib.rocks/image?repo=yourusername/Image-Caption-Generator)](https://github.com/yourusername/Image-Caption-Generator/graphs/contributors)
+
+---
+
+## 📈 Project Stats
+
+<a href="https://www.star-history.com/#yourusername/Image-Caption-Generator&type=date&legend=top-left">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=yourusername/Image-Caption-Generator&type=date&theme=dark&legend=top-left" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=yourusername/Image-Caption-Generator&type=date&legend=top-left" />
+   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=yourusername/Image-Caption-Generator&type=date&legend=top-left" />
+ </picture>
+</a>
+
+![Repobeats](https://repobeats.axiom.co/api/embed/PUT_YOUR_REPO_HASH_HERE.svg)
+
+---
+
+If you want, I can:
+
+* Insert your actual GitHub repo links and badges (give me the repo URL), or
+* Produce a Chinese translation version (`README-CH.md`), or
+* Create the sample `example_output.jpg` and include the inference command + reproduced image in a small notebook.
+
+Which of those would you like next?
