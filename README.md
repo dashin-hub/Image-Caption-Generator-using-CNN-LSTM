@@ -1,4 +1,3 @@
----
 
 ````markdown
 # 🧠 Image Caption Generator using CNN + LSTM
