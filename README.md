@@ -1,9 +1,6 @@
 
 
 
-[English](./README-EN.md) | [中文文档](./README-CH.md)
-
-</div>
 
 # 🧠 Image Caption Generator (CNN + LSTM)
 
