@@ -1,14 +1,5 @@
 
 
-<div align="center">
-
-<img src="static/image/logo_compressed.png" alt="Image Caption Generator Logo" width="100%">
-
-[![GitHub Stars](https://img.shields.io/github/stars/yourusername/Image-Caption-Generator?style=flat-square)](https://github.com/yourusername/Image-Caption-Generator/stargazers)
-[![GitHub Forks](https://img.shields.io/github/forks/yourusername/Image-Caption-Generator?style=flat-square)](https://github.com/yourusername/Image-Caption-Generator/network)
-[![GitHub Issues](https://img.shields.io/github/issues/yourusername/Image-Caption-Generator?style=flat-square)](https://github.com/yourusername/Image-Caption-Generator/issues)
-[![GitHub License](https://img.shields.io/github/license/yourusername/Image-Caption-Generator?style=flat-square)](https://github.com/yourusername/Image-Caption-Generator/blob/main/LICENSE)
-[![PyPI Version](https://img.shields.io/pypi/v/your-package-name?style=flat-square)](https://pypi.org/project/your-package-name)
 
 [English](./README-EN.md) | [中文文档](./README-CH.md)
 
