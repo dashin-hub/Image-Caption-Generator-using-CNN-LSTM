@@ -56,7 +56,7 @@ The system follows an Encoder–Decoder architecture:
 
 1. Clone the Repository
 
-```bash
+bash
 git clone https://github.com/yourusername/Image-Caption-Generator.git
 cd Image-Caption-Generator
 ````
