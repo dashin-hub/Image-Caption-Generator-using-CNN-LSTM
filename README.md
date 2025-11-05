@@ -44,9 +44,6 @@ Key features:
 
 ## 🧠 Architecture
 
-<div align="center">
-<img src="static/image/system_schematic.png" alt="Architecture Schematic" width="800">
-</div>
 
 1. **CNN Encoder**
 
@@ -151,20 +148,6 @@ python src/inference.py --image static/example.jpg --model models/last_checkpoin
 
 ---
 
-## 📸 Example Output
-
-Below is an example of model output. Replace `example_output.jpg` with your real output.
-
-<div align="center">
-<img src="example_output.jpg" alt="Example Output" width="700">
-</div>
-
-**Generated Caption (example):**
-
-> “A group of people standing next to a red and white boat on a beach.”
-
----
-
 ## 📊 Results & Evaluation
 
 * **Dataset:** MS COCO (subset / full)
@@ -198,20 +181,13 @@ Below is an example of model output. Replace `example_output.jpg` with your real
 
 This project is for educational and research purposes only. Respect dataset terms (MS COCO) and licenses. Do not use this system for disallowed or infringing activities.
 
----
-
-## 📄 License
-
-This project is released under the **MIT License** (or change to your preferred license). See the `LICENSE` file for details.
-
----
+___
 
 ## 👨‍💻 Author & Contact
 
-**Sreedharshan G J**
+Sreedharshan G J
 Electronics & Communication Engineering — SRM Institute of Science and Technology
-📧 [your.email@example.com](mailto:your.email@example.com)
-GitHub: [yourusername](https://github.com/yourusername)
+📧 [sg6165@srmist.edu.in](mailto:your.email@example.com)
 
 ---
 
@@ -228,30 +204,3 @@ Be sure to follow PEP8, add tests for new features, and update docs.
 
 ---
 
-## 👥 Contributors
-
-[![Contributors](https://contrib.rocks/image?repo=yourusername/Image-Caption-Generator)](https://github.com/yourusername/Image-Caption-Generator/graphs/contributors)
-
----
-
-## 📈 Project Stats
-
-<a href="https://www.star-history.com/#yourusername/Image-Caption-Generator&type=date&legend=top-left">
- <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=yourusername/Image-Caption-Generator&type=date&theme=dark&legend=top-left" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=yourusername/Image-Caption-Generator&type=date&legend=top-left" />
-   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=yourusername/Image-Caption-Generator&type=date&legend=top-left" />
- </picture>
-</a>
-
-![Repobeats](https://repobeats.axiom.co/api/embed/PUT_YOUR_REPO_HASH_HERE.svg)
-
----
-
-If you want, I can:
-
-* Insert your actual GitHub repo links and badges (give me the repo URL), or
-* Produce a Chinese translation version (`README-CH.md`), or
-* Create the sample `example_output.jpg` and include the inference command + reproduced image in a small notebook.
-
-Which of those would you like next?
