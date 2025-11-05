@@ -56,7 +56,8 @@ The system follows an Encoder–Decoder architecture:
 
 ## 🖼️ Example Output
 
-Input: 🐶 Dog playing in the park  
+Input: <img width="477" height="761" alt="image" src="https://github.com/user-attachments/assets/6680ed65-d826-4ac5-b111-9e4f12255c3a" />
+  
 Generated Caption: "A brown dog playing with a ball in the grass."
 
 ---
