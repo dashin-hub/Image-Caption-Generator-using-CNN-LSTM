@@ -1,8 +1,4 @@
-Nice — I’ll make a polished, full-featured README for your **Image Caption Generator (CNN + LSTM)** styled like the BettaFish example you pasted: big centered header, badges, clear sections (Overview, Architecture, Quick Start, Example Output with image), code blocks, disclaimers, license, contact, contributors, and project stats placeholders. Copy-paste ready.
 
-Below is the complete `README.md` (Markdown). Replace any `yourusername`, image paths, URLs, and placeholder values with your real ones.
-
----
 
 <div align="center">
 
