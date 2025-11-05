@@ -6,11 +6,6 @@ It’s clean, professional, and formatted for **GitHub** — you can paste it di
 ---
 
 ````markdown
-# 🧠 Image Caption Generator using CNN + LSTM
-
-Automatically generate descriptive captions for images using **Deep Learning**, combining the power of **Computer Vision (CNN)** and **Natural Language Processing (LSTM)**.  
-Built with **TensorFlow / Keras**, trained on the **MS COCO dataset**, and capable of generating human-like image descriptions.
-
 ---
 
 ## 🎯 **Project Overview**
@@ -39,30 +34,30 @@ The system follows an **Encoder–Decoder** architecture:
    - Extracts visual features from images using a pretrained CNN model.  
    - Converts the image into a numerical feature vector.
 
-2. **LSTM Decoder:**  
+2. LSTM Decoder:
    - Takes the encoded image features and generates descriptive captions word by word.  
    - Learns contextual relationships between visual and textual data.
 
-3. **Combined Model:**  
+3. Combined Model:
    - The CNN and LSTM are merged to form an end-to-end trainable network.  
    - Uses categorical cross-entropy loss for optimization.
 
 ---
 
-## 🧠 **Workflow**
+## 🧠 Workflow
 
-1. **Image Feature Extraction:** Use a pretrained CNN (InceptionV3 / VGG16 / ResNet50) to extract image features.  
-2. **Caption Preprocessing:** Tokenize and clean captions using NLTK & Keras Tokenizer.  
-3. **Training:** Combine image features with text sequences and train the CNN + LSTM model.  
-4. **Evaluation:** Measure BLEU score to compare predicted and ground-truth captions.  
-5. **Inference:** Generate captions for unseen images using the trained model.
+1. Image Feature Extraction: Use a pretrained CNN (InceptionV3 / VGG16 / ResNet50) to extract image features.  
+2. Caption Preprocessing: Tokenize and clean captions using NLTK & Keras Tokenizer.  
+3. Training: Combine image features with text sequences and train the CNN + LSTM model.  
+4. Evaluation:Measure BLEU score to compare predicted and ground-truth captions.  
+5. Inference: Generate captions for unseen images using the trained model.
 
 ---
 
-## 🖼️ **Example Output**
+## 🖼️ Example Output
 
-**Input:** 🐶 Dog playing in the park  
-**Generated Caption:** `"A brown dog playing with a ball in the grass."`
+Input: 🐶 Dog playing in the park  
+Generated Caption: `"A brown dog playing with a ball in the grass."`
 
 ---
 
@@ -75,19 +70,19 @@ git clone https://github.com/yourusername/Image-Caption-Generator.git
 cd Image-Caption-Generator
 ````
 
-2. **Install Dependencies**
+2. Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-3. **Download Dataset**
+3. Download Dataset
 
 Download the [MS COCO dataset](https://cocodataset.org/#home) and place it inside the `/data` folder.
 
 ---
 
-## 🧠 **Training the Model**
+## 🧠 Training the Model
 
 ```bash
 python extract_features.py     # Extract image features using CNN
@@ -143,11 +138,7 @@ Image-Caption-Generator/
 
 ---
 
- 🧾 Resume Line
-
-> Developed an Image Caption Generator by combining CNN for image feature extraction and LSTM for sentence generation, achieving automated text descriptions from image data.
-
----
+ 
 
  🧠 Expected Outcome
 
@@ -169,12 +160,8 @@ Image-Caption-Generator/
 
 👤 Author
 
-**SREEDHARSHAN G J**
+SREEDHARSHAN G J
 🎓 B.Tech ECE | SRM Institute of Science and Technology
 📧 [sg6165@srmist.edu.in]
 
-
-
-
-```
 
