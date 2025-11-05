@@ -53,12 +53,6 @@ The system follows an Encoder–Decoder architecture:
 
 ---
 
-## 🖼️ Example Output
-
-Input: <img width="477" height="761" alt="image" src="https://github.com/user-attachments/assets/6680ed65-d826-4ac5-b111-9e4f12255c3a" />
-  
-Generated Caption: "A brown dog playing with a ball in the grass."
-
 ---
 
 ## 💻 Installation & Setup
@@ -144,7 +138,7 @@ Image-Caption-Generator/
 
 ## 👤 Author
 
-Your Name
+SREE DHARSHAN G J
 B.Tech ECE | SRM Institute of Science and Technology
 [sg6165@srmist.edu.in]
 
