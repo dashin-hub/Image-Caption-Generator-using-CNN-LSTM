@@ -1,0 +1,47 @@
+2025-11-05 23:23:51,558 - INFO - Starting training process...
+2025-11-05 23:23:51,559 - INFO - Using device: cpu
+2025-11-05 23:23:51,564 - INFO - Created dummy dataset
+2025-11-05 23:23:52,143 - INFO - Models initialized
+2025-11-05 23:23:52,145 - INFO - Starting training loop...
+2025-11-05 23:23:52,178 - ERROR - Error during training: stack expects each tensor to be equal size, but got [13] at entry 0 and [12] at entry 1
+Traceback (most recent call last):
+  File "C:\Users\dashi\Downloads\image_caption_generator_app\train_simple.py", line 52, in main
+    for batch_idx, (images, captions) in enumerate(train_loader):
+                                         ~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Users\dashi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\torch\utils\data\dataloader.py", line 732, in __next__
+    data = self._next_data()
+  File "C:\Users\dashi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\torch\utils\data\dataloader.py", line 788, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+  File "C:\Users\dashi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\torch\utils\data\_utils\fetch.py", line 55, in fetch
+    return self.collate_fn(data)
+           ~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\dashi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\torch\utils\data\_utils\collate.py", line 398, in default_collate
+    return collate(batch, collate_fn_map=default_collate_fn_map)
+  File "C:\Users\dashi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\torch\utils\data\_utils\collate.py", line 212, in collate
+    collate(samples, collate_fn_map=collate_fn_map)
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dashi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\torch\utils\data\_utils\collate.py", line 155, in collate
+    return collate_fn_map[elem_type](batch, collate_fn_map=collate_fn_map)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dashi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\torch\utils\data\_utils\collate.py", line 272, in collate_tensor_fn
+    return torch.stack(batch, 0, out=out)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+RuntimeError: stack expects each tensor to be equal size, but got [13] at entry 0 and [12] at entry 1
+2025-11-05 23:24:43,700 - INFO - Starting training process...
+2025-11-05 23:24:43,701 - INFO - Using device: cpu
+2025-11-05 23:24:43,706 - INFO - Created dummy dataset
+2025-11-05 23:24:44,324 - INFO - Models initialized
+2025-11-05 23:24:44,326 - INFO - Starting training loop...
+2025-11-05 23:24:45,576 - INFO - Batch 1, Loss: 7.3658
+2025-11-05 23:24:46,644 - INFO - Batch 2, Loss: 5.5154
+2025-11-05 23:24:47,314 - INFO - Batch 3, Loss: 4.9891
+2025-11-05 23:24:47,497 - INFO - Model saved successfully
+2025-11-07 08:19:50,842 - INFO - Starting training process...
+2025-11-07 08:19:50,843 - INFO - Using device: cpu
+2025-11-07 08:19:50,874 - INFO - Created dummy dataset
+2025-11-07 08:19:51,393 - INFO - Models initialized
+2025-11-07 08:19:51,394 - INFO - Starting training loop...
+2025-11-07 08:19:52,494 - INFO - Batch 1, Loss: 7.1387
+2025-11-07 08:19:53,440 - INFO - Batch 2, Loss: 5.6203
+2025-11-07 08:19:54,044 - INFO - Batch 3, Loss: 5.8112
+2025-11-07 08:19:54,156 - INFO - Model saved successfully
